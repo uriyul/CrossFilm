@@ -1,8 +1,9 @@
+import { useState } from "react";
 import "./App.css";
 import Person from "./Person";
 import { Persons } from "./Person";
 
-let Actor1: Persons = {
+let Actor: Persons = {
   i: {
     height: 148,
     imageUrl:
@@ -10,22 +11,19 @@ let Actor1: Persons = {
     width: 100,
   },
   id: "",
-  l: "",
-  s: "",
-};
-let Actor2: Persons = {
-  i: {
-    height: 148,
-    imageUrl:
-      "https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-541.jpg",
-    width: 100,
-  },
-  id: "",
-  l: "",
-  s: "",
+  l: ".",
+  s: ".",
 };
 
+let SetActor1: (actor: Persons) => void;
+let SetActor2: (actor: Persons) => void;
+
 function SideBySideActors() {
+  const [Actor1, setActor1] = useState(Actor);
+  const [Actor2, setActor2] = useState(Actor);
+  SetActor1 = setActor1;
+  SetActor2 = setActor2;
+
   return (
     <div id="sideBySideActors" className="splitscreen">
       <div id="actor1" className="left">
@@ -38,13 +36,6 @@ function SideBySideActors() {
       </div>
     </div>
   );
-}
-
-function SetActor1(actor: Persons) {
-  Actor1 = actor;
-}
-function SetActor2(actor: Persons) {
-  Actor2 = actor;
 }
 
 export default SideBySideActors;
