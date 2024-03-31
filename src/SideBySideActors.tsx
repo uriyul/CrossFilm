@@ -3,6 +3,11 @@ import "./App.css";
 import Person from "./Person";
 import { Persons } from "./Person";
 
+interface Props {
+  setAppActor1: (actor: Persons) => void;
+  setAppActor2: (actor: Persons) => void;
+}
+
 let Actor: Persons = {
   i: {
     height: 148,
@@ -18,11 +23,18 @@ let Actor: Persons = {
 let SetActor1: (actor: Persons) => void;
 let SetActor2: (actor: Persons) => void;
 
-function SideBySideActors() {
+function SideBySideActors({ setAppActor1, setAppActor2 }: Props) {
   const [Actor1, setActor1] = useState(Actor);
   const [Actor2, setActor2] = useState(Actor);
   SetActor1 = setActor1;
   SetActor2 = setActor2;
+
+  if (Actor1.id !== "") {
+    setAppActor1(Actor1);
+  }
+  if (Actor2.id !== "") {
+    setAppActor2(Actor2);
+  }
 
   return (
     <div id="sideBySideActors" className="splitscreen">

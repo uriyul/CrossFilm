@@ -12,7 +12,6 @@ let currentActorNum = 1;
 function MainForm({ setText, setDropdownVisible }: Props) {
   return (
     <div id="mainForm">
-      <h1>Form</h1>
       <input
         id="actor"
         type="text"
@@ -25,16 +24,6 @@ function MainForm({ setText, setDropdownVisible }: Props) {
           })
         }
       />
-      <br />
-      <button
-        id="submit"
-        type="button"
-        className="btn btn-primary"
-        disabled={true}
-        style={{ marginBlock: "0 20px" }}
-      >
-        Submit
-      </button>
     </div>
   );
 }
@@ -65,10 +54,6 @@ function SetActor(actor: Persons) {
       (element as HTMLInputElement).value = "";
       (element as HTMLInputElement).placeholder = "";
       (element as HTMLInputElement).disabled = true;
-
-      // enable submit button
-      const submit = document.getElementById("submit");
-      (submit as HTMLButtonElement).disabled = false;
     }
     // clear suggestions
     const suggestions = document.getElementById("suggestions");
