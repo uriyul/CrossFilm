@@ -13,7 +13,10 @@ function Film({ filmNode }: Props) {
         src={filmNode.title.primaryImage?.url}
         alt={filmNode.title.primaryImage?.caption.plainText}
       />
-      <div>{String(filmNode.title.titleText.text)}</div>
+      <div>
+        {String(filmNode.title.titleText.text)} (
+        {String(filmNode.title.releaseYear?.year)})
+      </div>
       <hr></hr>
     </>
   );
