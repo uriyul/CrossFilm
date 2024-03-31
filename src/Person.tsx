@@ -1,4 +1,5 @@
 import "./App.css";
+import { SetActor } from "./MainForm"; // Replace "./module" with the actual module path
 
 interface Persons {
   i: Img;
@@ -30,7 +31,10 @@ function Person({ i: image, id, l: name, s: description }: Persons) {
   return (
     <div
       key={id}
-      onClick={() => console.log("Person clicked: " + name)}
+      onClick={() => {
+        console.log("Person clicked: " + name);
+        SetActor({ i: image, id, s: description, l: name });
+      }}
       className="div"
     >
       <img width="100" height="148" src={image?.imageUrl} alt={name} />

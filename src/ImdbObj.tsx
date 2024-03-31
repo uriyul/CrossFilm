@@ -25,7 +25,7 @@ function ImdbObj({ text }: Props) {
       .then(setData);
   }, []);
   return (
-    <div>
+    <div id="suggestions">
       {data?.d.map((item) => {
         if (item.id.startsWith("nm")) {
           return <Person i={item.i} id={item.id} l={item.l} s={item.s} />;

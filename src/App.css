@@ -47,3 +47,14 @@
 .div:hover {
   background-color: #dfdfdf;
 }
+
+.splitscreen {
+  display: flex;
+}
+
+.splitscreen .left,
+.splitscreen .right {
+  flex: 1;
+  padding: 2em;
+  width: 200pt;
+}
