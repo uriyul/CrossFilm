@@ -34,6 +34,7 @@ function ImdbObj({ text }: Props) {
               id={item.id}
               l={item.l}
               s={item.s}
+              treatClick={true}
               key={item.id}
             />
           );

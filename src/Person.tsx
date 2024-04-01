@@ -13,6 +13,7 @@ interface Persons {
   qid?: string;
   y?: number;
   yr?: string;
+  treatClick?: boolean;
 }
 
 interface V {
@@ -27,13 +28,19 @@ interface Img {
   width: number;
 }
 
-function Person({ i: image, id, l: name, s: description }: Persons) {
+function Person({
+  i: image,
+  id,
+  l: name,
+  s: description,
+  treatClick = false,
+}: Persons) {
   return (
     <div
       key={id}
       onClick={() => {
         console.log("Person clicked: " + name);
-        SetActor({ i: image, id, s: description, l: name });
+        if (treatClick) SetActor({ i: image, id, s: description, l: name });
       }}
       className="div"
     >
