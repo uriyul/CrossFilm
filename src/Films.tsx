@@ -55,9 +55,9 @@ function GetFilmsForActor(
       .then(setData);
   }, []);
 
-  if (data == null) return;
+  if (data == null || data.data.name.actor_credits == null) return;
 
-  data?.data.name.actor_credits.edges.map((item) => {
+  data.data.name.actor_credits?.edges.map((item) => {
     hashMap.set(item.node.title.id, item.node);
   });
 }
