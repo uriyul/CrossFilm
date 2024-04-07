@@ -4,6 +4,7 @@ import MainForm from "./MainForm";
 import SideBySideActors from "./SideBySideActors";
 import Films from "./Films";
 import { Persons } from "./Person";
+//import DocTest from "./DocTest";
 
 function App() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -18,13 +19,23 @@ function App() {
       )}
       {dropdownVisible && <ImdbObj text={text} />}
       {actor1 != null && actor2 != null && (
-        <Films actor1Code={actor1.id} actor2Code={actor2.id} />
+        <Films
+          actor1Code={actor1.id}
+          actor1Male={IsMale(actor1)}
+          actor2Code={actor2.id}
+          actor2Male={IsMale(actor2)}
+        />
       )}
 
-      {/* <Films actor1Code="nm0000093" actor2Code="nm0000158" /> */}
+      {/* <DocTest actorCode="nm2933757" /> */}
+
       <div>------------</div>
     </div>
   );
+}
+
+function IsMale(actor: Persons) {
+  return actor.s.startsWith("Actor");
 }
 
 export default App;

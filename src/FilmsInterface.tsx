@@ -19,7 +19,8 @@ interface Name {
   id: string;
   nameText: NameText;
   primaryImage: PrimaryImage;
-  actor_credits: Actorcredits;
+  actress_credits?: Actorcredits;
+  actor_credits?: Actorcredits;
 }
 interface Actorcredits {
   total: number;
@@ -154,3 +155,4 @@ export default FilmsRoot;
 export type { FilmsRoot };
 export type { FilmNode };
 export type { Title };
+export type { Actorcredits };
