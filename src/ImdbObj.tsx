@@ -19,11 +19,14 @@ function ImdbObj({ text }: Props) {
 
   console.log(url);
 
+  // The following line is a hack to make the component re-render only when the text changes
+  let deps = text.substring(text.length - 3, text.length - 1).split("");
+
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then(setData);
-  }, []);
+  }, deps);
   return (
     <div id="suggestions">
       {data?.d.map((item) => {

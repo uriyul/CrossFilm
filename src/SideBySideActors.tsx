@@ -16,8 +16,8 @@ let Actor: Persons = {
     width: 100,
   },
   id: "",
-  l: ".",
-  s: ".",
+  l: "",
+  s: "",
 };
 
 let SetActor1: (actor: Persons) => void;
