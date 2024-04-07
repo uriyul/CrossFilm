@@ -4,7 +4,6 @@ import MainForm from "./MainForm";
 import SideBySideActors from "./SideBySideActors";
 import Films from "./Films";
 import { Persons } from "./Person";
-//import DocTest from "./DocTest";
 
 function App() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -35,6 +34,8 @@ function App() {
 }
 
 function IsMale(actor: Persons) {
+  // TODO: this function doesn't work properly.
+  // If the person's primary role is not an actor (e.g. Quentin Tarantino), it will return false.
   return actor.s.startsWith("Actor");
 }
 
