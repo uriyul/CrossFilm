@@ -18,25 +18,11 @@ function App() {
       )}
       {dropdownVisible && <ImdbObj text={text} />}
       {actor1 != null && actor2 != null && (
-        <Films
-          actor1Code={actor1.id}
-          actor1Male={IsMale(actor1)}
-          actor2Code={actor2.id}
-          actor2Male={IsMale(actor2)}
-        />
+        <Films actor1Code={actor1.id} actor2Code={actor2.id} />
       )}
-
-      {/* <DocTest actorCode="nm2933757" /> */}
-
-      <div>------------</div>
+      <hr />
     </div>
   );
-}
-
-function IsMale(actor: Persons) {
-  // TODO: this function doesn't work properly.
-  // If the person's primary role is not an actor (e.g. Quentin Tarantino), it will return false.
-  return actor.s.startsWith("Actor");
 }
 
 export default App;
