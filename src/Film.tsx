@@ -15,7 +15,10 @@ function Film({ filmNode }: Props) {
       />
       <div key={filmNode.title.id + "_"}>
         {String(filmNode.title.titleText.text)} (
-        {String(filmNode.title.releaseYear?.year)})
+        {String(filmNode.title.releaseYear?.year)}
+        )
+        <br />
+        {String(filmNode.title.titleType.text)}
       </div>
       <hr></hr>
     </div>
