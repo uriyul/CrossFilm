@@ -6,14 +6,14 @@ interface Props {
 
 function Film({ filmNode }: Props) {
   return (
-    <div key={filmNode.title.id}>
+    <div>
       <img
         width="100"
         height="148"
         src={filmNode.title.primaryImage?.url}
         alt={filmNode.title.primaryImage?.caption.plainText}
       />
-      <div key={filmNode.title.id + "_"}>
+      <div>
         {String(filmNode.title.titleText.text)} (
         {String(filmNode.title.releaseYear?.year)}
         )

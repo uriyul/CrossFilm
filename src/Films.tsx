@@ -29,7 +29,7 @@ function Films({ actor1Code, actor2Code }: Props) {
     <div id="movies">
       <h3>{intersectionMap.size} Common Films:</h3>
       {Array.from(intersectionMap.values()).map((value) => (
-        <Film filmNode={value} />
+        <Film key={value.title.id} filmNode={value} />
       ))}
     </div>
   );
