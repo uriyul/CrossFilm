@@ -16,6 +16,7 @@ function MainForm({ setText, setDropdownVisible }: Props) {
         id="actor"
         type="text"
         placeholder="Search Actor 1"
+        autoComplete="off"
         style={{ marginBlock: "0 20px" }}
         onKeyUpCapture={(e) =>
           AutoComplete((e.target as HTMLInputElement).value, {
