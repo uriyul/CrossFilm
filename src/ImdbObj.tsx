@@ -21,6 +21,7 @@ function ImdbObj({ text }: Props) {
 
   // The following line is a hack to make the component re-render only when the text changes
   let deps = text.substring(text.length - 3, text.length - 1).split("");
+  let actor1Id = document.getElementById("actor1")?.children[1].id;
 
   useEffect(() => {
     fetch(url)
@@ -30,7 +31,10 @@ function ImdbObj({ text }: Props) {
   return (
     <div id="suggestions">
       {data?.d.map((item) => {
-        if (item.id.startsWith("nm")) {
+        if (
+          item.id.startsWith("nm")
+          // && item.id != actor1Id
+        ) {
           return (
             <Person
               i={item.i}

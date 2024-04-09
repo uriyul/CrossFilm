@@ -38,6 +38,7 @@ function Person({
   return (
     <div
       key={id}
+      id={id}
       onClick={() => {
         console.log("Person clicked: " + name);
         if (treatClick) SetActor({ i: image, id, s: description, l: name });
