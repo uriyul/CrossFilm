@@ -29,12 +29,9 @@ function SideBySideActors({ setAppActor1, setAppActor2 }: Props) {
   SetActor1 = setActor1;
   SetActor2 = setActor2;
 
-  if (Actor1.id !== "") {
-    setAppActor1(Actor1);
-  }
-  if (Actor2.id !== "") {
-    setAppActor2(Actor2);
-  }
+  if (Actor1.id !== "") setAppActor1(Actor1);
+
+  if (Actor2.id !== "") setAppActor2(Actor2);
 
   return (
     <div id="sideBySideActors" className="splitscreen">

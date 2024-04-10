@@ -17,9 +17,10 @@ function App() {
         <MainForm setText={setText} setDropdownVisible={setDropdownVisible} />
       )}
       {dropdownVisible && <ImdbObj text={text} />}
-      {actor1 != null && actor2 != null && (
-        <Films actor1Code={actor1.id} actor2Code={actor2.id} />
-      )}
+      <Films
+        actor1Code={actor1 ? actor1.id : null}
+        actor2Code={actor2 ? actor2.id : null}
+      />
       <hr />
     </div>
   );
