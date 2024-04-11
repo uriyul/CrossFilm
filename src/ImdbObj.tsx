@@ -20,8 +20,8 @@ function ImdbObj({ text, setActor1, setActor2 }: Props) {
   const url = "https://v3.sg.media-imdb.com/suggestion/x/" + text + ".json";
 
   // The following line is a hack to make the component re-render only when the text changes
-  let deps = text.substring(text.length - 3, text.length - 1).split("");
-  //let actor1Id = document.getElementById("actor1")?.children[1].id;
+  let deps = text.substring(text.length - 3, text.length).split("");
+  let actor1Id = document.getElementById("actor1")?.children[1].id;
 
   useEffect(() => {
     fetch(url)
@@ -31,10 +31,7 @@ function ImdbObj({ text, setActor1, setActor2 }: Props) {
   return (
     <div id="suggestions">
       {data?.d.map((item) => {
-        if (
-          item.id.startsWith("nm")
-          // && item.id != actor1Id
-        ) {
+        if (item.id.startsWith("nm") && item.id != actor1Id) {
           return (
             <Person
               i={item.i}
