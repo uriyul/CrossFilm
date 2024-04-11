@@ -12,9 +12,10 @@ interface Props {
   text: string;
   setActor1: (actor: Persons) => void;
   setActor2: (actor: Persons) => void;
+  setDropdownVisible: (visible: boolean) => void;
 }
 
-function ImdbObj({ text, setActor1, setActor2 }: Props) {
+function ImdbObj({ text, setActor1, setActor2, setDropdownVisible }: Props) {
   const [data, setData] = useState<ImdbInterface | null>(null);
 
   const url = "https://v3.sg.media-imdb.com/suggestion/x/" + text + ".json";
@@ -42,6 +43,7 @@ function ImdbObj({ text, setActor1, setActor2 }: Props) {
               key={item.id}
               setActor1={setActor1}
               setActor2={setActor2}
+              setDropdownVisible={setDropdownVisible}
             />
           );
         }

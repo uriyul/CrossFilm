@@ -15,6 +15,7 @@ interface Persons {
   treatClick?: boolean;
   setActor1?: (actor: Persons) => void;
   setActor2?: (actor: Persons) => void;
+  setDropdownVisible?: (visible: boolean) => void;
 }
 
 interface V {
@@ -37,6 +38,7 @@ function Person({
   treatClick = false,
   setActor1,
   setActor2,
+  setDropdownVisible,
 }: Persons) {
   return (
     <div
@@ -52,6 +54,7 @@ function Person({
             l: name,
             setActor1: setActor1,
             setActor2: setActor2,
+            setDropdownVisible: setDropdownVisible,
           });
       }}
       className="div"
@@ -76,12 +79,14 @@ function SetActor(actor: Persons) {
       if (actor.setActor1) {
         actor.setActor1(actor);
         console.log("Actor 1 set: " + actor.l);
+        if (actor.setDropdownVisible) actor.setDropdownVisible(false);
       }
       // Show actors
     } else if (currentActorNum == 2) {
       // set right to actor 2
       if (actor.setActor2) {
         actor.setActor2(actor);
+        if (actor.setDropdownVisible) actor.setDropdownVisible(false);
         console.log("Actor 2 set: " + actor.l);
       }
       // clear field actor

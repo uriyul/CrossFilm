@@ -33,8 +33,22 @@ function App() {
       {(actor1.id == "" || actor2.id == "") && (
         <MainForm setText={setText} setDropdownVisible={setDropdownVisible} />
       )}
+      {(actor1.id != "" || actor2.id != "") && !dropdownVisible && (
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => location.reload()}
+        >
+          Clear
+        </button>
+      )}
       {dropdownVisible && (
-        <ImdbObj text={text} setActor1={setActor1} setActor2={setActor2} />
+        <ImdbObj
+          text={text}
+          setActor1={setActor1}
+          setActor2={setActor2}
+          setDropdownVisible={setDropdownVisible}
+        />
       )}
       <Films
         actor1Code={actor1 ? actor1.id : null}

@@ -12,7 +12,12 @@ function Films({ actor1Code, actor2Code }: Props) {
   const [data2, setData2] = useState<Actorcredits | null>(null);
 
   useEffect(() => {
-    if (actor1Code != null && actor2Code != null) {
+    if (
+      actor1Code != null &&
+      actor2Code != null &&
+      actor1Code != "" &&
+      actor2Code != ""
+    ) {
       GetFilmsForActor(actor1Code, setData1);
       GetFilmsForActor(actor2Code, setData2);
     }
