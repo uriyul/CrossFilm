@@ -34,14 +34,17 @@ function App() {
         <MainForm setText={setText} setDropdownVisible={setDropdownVisible} />
       )}
       {(actor1.id != "" || actor2.id != "") && !dropdownVisible && (
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={() => location.reload()}
-        >
-          Clear
-        </button>
+        <div>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => location.reload()}
+          >
+            Clear
+          </button>
+        </div>
       )}
+      <br />
       {dropdownVisible && (
         <ImdbObj
           text={text}

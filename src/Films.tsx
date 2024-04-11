@@ -24,8 +24,17 @@ function Films({ actor1Code, actor2Code }: Props) {
   }, [actor1Code, actor2Code]);
 
   if (data1 == null || data2 == null) {
-    // Add a loading spinner here
-    return <div> </div>;
+    let actor1id = document.getElementById("actor1")?.children[1].id;
+    let actor2id = document.getElementById("actor2")?.children[1].id;
+    if (actor1id && actor1id != "" && actor2id && actor2id != "") {
+      return (
+        <div className="spinner-border text-primary" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      );
+    } else {
+      return <></>;
+    }
   }
 
   let intersectionMap = GetFilmsIntersection(data1, data2);
