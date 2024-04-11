@@ -29,6 +29,7 @@ function App() {
 
   return (
     <div style={{ margin: "0 20px" }}>
+      <img width="500" height="148" src={"/public/CrossFilm.png"} />
       <SideBySideActors Actor1={actor1} Actor2={actor2} />
       {(actor1.id == "" || actor2.id == "") && (
         <MainForm setText={setText} setDropdownVisible={setDropdownVisible} />
