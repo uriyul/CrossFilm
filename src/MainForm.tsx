@@ -1,6 +1,6 @@
 import { Persons } from "./Person";
-import { SetActor1 as SetActor1Ex } from "./SideBySideActors";
-import { SetActor2 as SetActor2Ex } from "./SideBySideActors";
+import { SetActor1 as SetActor1Ex } from "./App";
+import { SetActor2 as SetActor2Ex } from "./App";
 
 interface Props {
   setText: (text: string) => void;
@@ -30,7 +30,7 @@ function MainForm({ setText, setDropdownVisible }: Props) {
 }
 
 function AutoComplete(e: string, { setText, setDropdownVisible }: Props) {
-  console.log("$$$" + e);
+  //console.log("$$$" + e);
   if (e.length > 2) {
     setText(e);
     setDropdownVisible(true);
@@ -47,10 +47,12 @@ function SetActor(actor: Persons) {
       (element as HTMLInputElement).value = "";
       (element as HTMLInputElement).placeholder = "Search Actor 2";
       SetActor1Ex(actor);
+      console.log("Actor 1 set: " + actor.l);
       // Show actors
     } else if (currentActorNum == 2) {
       // set right to actor 2
       SetActor2Ex(actor);
+      console.log("Actor 2 set: " + actor.l);
       // clear field actor
       (element as HTMLInputElement).value = "";
       (element as HTMLInputElement).placeholder = "";

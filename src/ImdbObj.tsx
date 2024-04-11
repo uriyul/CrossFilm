@@ -17,11 +17,9 @@ function ImdbObj({ text }: Props) {
 
   const url = "https://v3.sg.media-imdb.com/suggestion/x/" + text + ".json";
 
-  console.log(url);
-
   // The following line is a hack to make the component re-render only when the text changes
   let deps = text.substring(text.length - 3, text.length - 1).split("");
-  let actor1Id = document.getElementById("actor1")?.children[1].id;
+  //let actor1Id = document.getElementById("actor1")?.children[1].id;
 
   useEffect(() => {
     fetch(url)
