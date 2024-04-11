@@ -33,7 +33,9 @@ function App() {
       {(actor1.id == "" || actor2.id == "") && (
         <MainForm setText={setText} setDropdownVisible={setDropdownVisible} />
       )}
-      {dropdownVisible && <ImdbObj text={text} />}
+      {dropdownVisible && (
+        <ImdbObj text={text} setActor1={setActor1} setActor2={setActor2} />
+      )}
       <Films
         actor1Code={actor1 ? actor1.id : null}
         actor2Code={actor2 ? actor2.id : null}
@@ -44,4 +46,3 @@ function App() {
 }
 
 export default App;
-export { SetActor1, SetActor2 };
