@@ -5,9 +5,6 @@ import SideBySideActors from "./SideBySideActors";
 import Films from "./Films";
 import { Persons } from "./Person";
 
-let SetActor1: (actor: Persons) => void;
-let SetActor2: (actor: Persons) => void;
-
 function App() {
   let Actor: Persons = {
     i: {
@@ -24,8 +21,6 @@ function App() {
   const [actor1, setActor1] = useState<Persons>(Actor);
   const [actor2, setActor2] = useState<Persons>(Actor);
   const [text, setText] = useState("");
-  SetActor1 = setActor1;
-  SetActor2 = setActor2;
 
   return (
     <div style={{ margin: "0 20px" }}>
