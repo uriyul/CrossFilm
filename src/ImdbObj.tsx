@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Person from "./Person";
 import { Persons } from "./Person";
+import { Img } from "./Person";
 
 interface ImdbInterface {
   d: Persons[];
@@ -35,7 +36,7 @@ function ImdbObj({ text, setActor1, setActor2, setDropdownVisible }: Props) {
         if (item.id.startsWith("nm") && item.id != actor1Id) {
           return (
             <Person
-              i={item.i}
+              i={GetImage(item.i)}
               id={item.id}
               l={item.l}
               s={item.s}
@@ -51,6 +52,19 @@ function ImdbObj({ text, setActor1, setActor2, setDropdownVisible }: Props) {
       })}
     </div>
   );
+}
+
+function GetImage(img: Img) {
+  if (img != undefined && img != null) {
+    return img;
+  } else {
+    return {
+      height: 148,
+      imageUrl:
+        "https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-541.jpg",
+      width: 100,
+    };
+  }
 }
 
 export default ImdbObj;

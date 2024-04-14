@@ -101,3 +101,4 @@ function SetActor(actor: Persons) {
 }
 export default Person;
 export type { Persons };
+export type { Img };
