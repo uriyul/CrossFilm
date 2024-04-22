@@ -21,15 +21,13 @@ function ImdbObj({ text, setActor1, setActor2, setDropdownVisible }: Props) {
 
   const url = "https://v3.sg.media-imdb.com/suggestion/x/" + text + ".json";
 
-  // The following line is a hack to make the component re-render only when the text changes
-  let deps = text.substring(text.length - 3, text.length).split("");
   let actor1Id = document.getElementById("actor1")?.children[1].id;
 
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then(setData);
-  }, deps);
+  }, [text]);
   return (
     <div id="suggestions">
       {data?.d.map((item) => {
